@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="js/jquery.js"></script>
+  <meta name="description" content="JQuery Exercise 3: Events" />
+
+  <meta charset=utf-8 />
+  <title>JQuery Exercise 3: Events</title>
+  <style>
+    td,
+    th {
+      border: 1px solid;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    * {
+      font: 13px arial, sans-serif;
+    }
+
+    #title p {
+      font-size: 25px;
+    }
+
+    .abstract {
+      padding: 10px;
+    }
+
+    div.abstract p {
+      color: grey;
+    }
+
+    td[rowspan="2"] {
+      background: lightgreen;
+    }
+
+    tbody tr:nth-child(4) {
+      background: lightblue;
+    }
+
+    .abstract .spacecraft {
+      color: red;
+    }
+
+    #text {
+      width: 100%;
+    }
+
+    .abstract .spacecraft.green {
+      color: green;
+    }
+
+    table tbody tr.grey {
+      background: grey;
+    }
+
+    table tr:last-child .spacecraft {
+      background: red;
+      color: white;
+    }
+
+    table {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <pre>
+      /**
+      *    JQuery Event Exercises
+      *
+      */
+      
+      // ******************************************
+      // Exercise 1
+      //
+      // - Event: Clicking on the 'caption' of the 
+      //   table.
+      // - Effect: Causing the table body to appear
+      //   and disappear.
+      // ******************************************
+      
+      
+      // ******************************************
+      // Exercise 2
+      //
+      // - Event: The mouse hovers over a span with
+      //   class spacecraft in the abstract
+      // - Effect: The class 'green' is added to the
+      //   hovered span, causing the spacecraft to 
+      //   change from red to green.
+      // ******************************************
+      
+      
+      // ******************************************
+      // Exercise 3
+      //
+      // - Event: Changing the text in the textarea.
+      // - Effect: The text in the third paragraph
+      //   of the div with class abstract changes
+      //   to match the text in the textarea.
+      // ******************************************
+      
+      
+      // ******************************************
+      // Exercise 4
+      //
+      // - Event: The mouse hovers over a span
+      //   with class spacecraft in the table.
+      // - Effect: A class 'grey' is added to the 
+      //   row to which that span belongs. Hovering
+      //   away must cause the 'grey' class to be
+      //   removed from the parent row. Only a SINGLE
+      //   event handler must be used (hint:
+      //   bind and toggleClass).
+      // ******************************************
+      
+      
+      // ******************************************
+      // Exercise 5
+      //
+      // - Event: Clicking on a row within a table
+      // - Effect: The clicked row is copied and 
+      //   added to the bottom of the table.
+      // ******************************************
+  </pre>
+
+  <div id="title">
+    <p>
+      Jupiter Flyby Missions
+    </p>
+  </div>
+
+  <div class="abstract">
+    Discussing flyby missions since 1973:
+    <p>
+      Beginning in 1973, several spacecraft have performed planetary flyby maneuvers that brought them within
+      observation range of Jupiter. The <span class="spacecraft">Pioneer</span> missions obtained the first close-up
+      images of Jupiter's atmosphere and several of its moons. They discovered that the radiation fields near the planet
+      were much stronger than expected, but both spacecraft managed to survive in that environment. The trajectories of
+      these spacecraft were used to refine the mass estimates of the Jovian system. Radio occultations by the planet
+      resulted in better measurements of Jupiter's diameter and the amount of polar flattening.
+    </p>
+    <p>
+      Six years later, the <span class="spacecraft">Voyager</span> missions vastly improved the understanding of the
+      Galilean moons and discovered Jupiter's rings. They also confirmed that the Great Red Spot was anticyclonic.
+      Comparison of images showed that the Red Spot had changed hue since the <span class="spacecraft">Pioneer</span>
+      missions, turning from orange to dark brown. A torus of ionized atoms was discovered along Io's orbital path, and
+      volcanoes were found on the moon's surface, some in the process of erupting. As the spacecraft passed behind the
+      planet, it observed flashes of lightning in the night side atmosphere.
+    </p>
+    <p id="targetArea">
+      Hello World!
+    </p>
+  </div>
+  <textarea id="text">Hello World!</textarea>
+
+  <table>
+    <caption>Flyby missions</caption>
+    <tbody>
+      <tr>
+        <th>Spacecraft</th>
+        <th>Closest<br>
+          approach
+        </th>
+        <th>Distance</th>
+      </tr>
+      <tr>
+        <td><span class="spacecraft">Pioneer 10</span></td>
+        <td>December 3, 1973</td>
+        <td>130,000 km</td>
+      </tr>
+      <tr>
+        <td><span class="spacecraft">Pioneer 11</span></td>
+        <td>December 4, 1974</td>
+        <td>34,000 km</td>
+      </tr>
+      <tr>
+        <td><span class="spacecraft">Voyager 1</span></td>
+        <td>March 5, 1979</td>
+        <td>349,000 km</td>
+      </tr>
+      <tr>
+        <td><span class="spacecraft">Voyager 2</span></td>
+        <td>July 9, 1979</td>
+        <td>570,000 km</td>
+      </tr>
+      <tr>
+        <td rowspan="2"><span class="spacecraft">Ulysses</span></td>
+        <td>February 8, 1992[91]</td>
+        <td>408,894 km</td>
+      </tr>
+      <tr>
+        <td>February 4, 2004[91]</td>
+        <td>120,000,000 km</td>
+      </tr>
+      <tr>
+        <td><span class="spacecraft">Cassini</span></td>
+        <td>December 30, 2000</td>
+        <td>10,000,000 km</td>
+      </tr>
+    </tbody>
+  </table>
+  <script type="text/javascript">
+    /**
+    *    JQuery Event Exercises
+    *
+    */
+
+    // ******************************************
+    // Exercise 1
+    //
+    // - Event: Clicking on the 'caption' of the 
+    //   table.
+    // - Effect: Causing the table body to appear
+    //   and disappear.
+    // ******************************************
+    $("table caption").click(function () {
+      $('tbody').toggle();
+    });
+
+
+    // ******************************************
+    // Exercise 2
+    //
+    // - Event: The mouse hovers over a span with
+    //   class spacecraft in the abstract
+    // - Effect: The class 'green' is added to the
+    //   hovered span, causing the spacecraft to 
+    //   change from red to green.
+    // ******************************************
+    $("span.spacecraft").hover(function () {
+      $(this).addClass("green");
+    });
+
+
+    // ******************************************
+    // Exercise 3
+    //
+    // - Event: Changing the text in the textarea.
+    // - Effect: The text in the third paragraph
+    //   of the div with class abstract changes
+    //   to match the text in the textarea.
+    // ******************************************
+    $("#text").keyup(function () {
+      $("#targetArea").text($(this).val());
+    });
+
+
+    // ******************************************
+    // Exercise 4
+    //
+    // - Event: The mouse hovers over a span
+    //   with class spacecraft in the table.
+    // - Effect: A class 'grey' is added to the 
+    //   row to which that span belongs. Hovering
+    //   away must cause the 'grey' class to be
+    //   removed from the parent row. Only a SINGLE
+    //   event handler must be used (hint:
+    //   bind and toggleClass).
+    // ******************************************
+    $("span.spacecraft").bind('mouseover mouseout', function () {
+      $(this).parent().parent().toggleClass('grey');
+    });
+
+
+    // ******************************************
+    // Exercise 5
+    //
+    // - Event: Clicking on a row within a table
+    // - Effect: The clicked row is copied and 
+    //   added to the bottom of the table.
+    // ******************************************
+    $("tr").click(function () {
+      $(this).parent().append($(this).clone());
+    });
+
+
+
+
+
+  </script>
+</body>
+
+</html>

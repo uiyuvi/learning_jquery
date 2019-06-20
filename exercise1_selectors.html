@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <script src="js/jquery.js"></script>
+   <meta name="description" content="JQuery Exercise 1: selectors" />
+   <meta charset=utf-8 />
+   <title>JQuery Exercise 1: selectors</title>
+</head>
+
+<body>
+   <pre>
+         /**
+         *    JQuery selector exercises
+         *
+         */
+         
+         // ******************************************
+         // Exercise 1
+         //
+         // - Replace the null with a selector that
+         //   selects ALL TD elements.
+         // - Verify that all TD elements have borders
+         // ******************************************
+         
+         
+         // ******************************************
+         // Exercise 2
+         //
+         // - Replace the null with a selector that
+         //   selects ALL TH elements.
+         // - Verify that all TH elements have borders
+         // ******************************************
+         
+         
+         // ******************************************
+         // Exercise 3
+         //
+         // - Replace the null with a selector that
+         //   Selects the TABLE element
+         // - Verify that the table's borders collapse.
+         // ******************************************
+         
+         
+         // ******************************************
+         // Exercise 4
+         //
+         // - Replace the null with a selector that
+         //   Selects the DIV with class 'abstract'
+         //   AND the table
+         // - Verify that the text font changes to arial
+         //   size 13 in both the table and the text.
+         // ******************************************
+         
+         
+         // ******************************************
+         // Exercise 5
+         //
+         // - Replace the null with a selector that
+         //   selects the paragraph within the DIV
+         //   with ID title
+         // - Verify that the text font changes to arial
+         //   size 25 for the title.
+         // ******************************************
+         
+         
+         // ******************************************
+         // Exercise 6
+         //
+         // - Replace the null with a selector that
+         //   selects the div with class 'abstract'
+         // - Verify that padding appears between
+         //   the text and the borders of the output.
+         // ******************************************
+         
+         
+         // ******************************************
+         // Exercise 7
+         //
+         // - Replace the null with a selector that
+         //   selects all paragraphs within the div 
+         //   with class 'abstract'
+         // - Verify that the paragraph's text color
+         //   changes to grey. The text 'Discussing
+         //   flyby missions since 1973:' stays
+         //   black
+         // ******************************************
+         
+         
+         // ******************************************
+         // Exercise 8
+         //
+         // - Replace the null with a selector that
+         //   selects the TD element with rowspan
+         //   equal to two
+         // - Verify that the table cell containing
+         //   'ulysses' is colored green.
+         // ******************************************
+         
+         
+         // ******************************************
+         // Exercise 9
+         //
+         // - Replace the null with a selector that
+         //   selects the third row in the table
+         //   excluding the header
+         // - Verify that the third row (containing
+         //   'Voyager 1' turns blue.
+         // ******************************************
+         
+         
+         // ******************************************
+         // Exercise 10
+         //
+         // - Replace the null with a selector that
+         //   selects the td element containing the 
+         //   string 34,000
+         // - Verify that the cell containing 34,000
+         //   km turns orange.
+         // ******************************************
+         
+         
+         // ******************************************
+         // Exercise 11
+         //
+         // - Replace the null with a selector that
+         //   selects the element with class spacecraft
+         //   within the last row of the table.
+         // - Verify that the background of the text
+         //   'Cassini' is red and the text is white.
+         // ******************************************
+   </pre>
+
+   <div id="title">
+      <p>
+         Jupiter Flyby Missions
+      </p>
+   </div>
+
+   <div class="abstract">
+      Discussing flyby missions since 1973:
+      <p>
+         Beginning in 1973, several spacecraft have performed planetary flyby maneuvers that brought them within
+         observation range of Jupiter. The <span class="spacecraft">Pioneer</span> missions obtained the first close-up
+         images of Jupiter's atmosphere and several of its moons. They discovered that the radiation fields near the
+         planet were much stronger than expected, but both spacecraft managed to survive in that environment. The
+         trajectories of these spacecraft were used to refine the mass estimates of the Jovian system. Radio
+         occultations by the planet resulted in better measurements of Jupiter's diameter and the amount of polar
+         flattening.
+      </p>
+      <p>
+         Six years later, the <span class="spacecraft">Voyager</span> missions vastly improved the understanding of the
+         Galilean moons and discovered Jupiter's rings. They also confirmed that the Great Red Spot was anticyclonic.
+         Comparison of images showed that the Red Spot had changed hue since the <span class="spacecraft">Pioneer</span>
+         missions, turning from orange to dark brown. A torus of ionized atoms was discovered along Io's orbital path,
+         and volcanoes were found on the moon's surface, some in the process of erupting. As the spacecraft passed
+         behind the planet, it observed flashes of lightning in the night side atmosphere.
+      </p>
+   </div>
+
+   <table>
+      <caption>Flyby missions</caption>
+      <tbody>
+         <tr>
+            <th>Spacecraft</th>
+            <th>Closest<br>
+               approach
+            </th>
+            <th>Distance</th>
+         </tr>
+         <tr>
+            <td><span class="spacecraft">Pioneer 10</span></td>
+            <td>December 3, 1973</td>
+            <td>130,000 km</td>
+         </tr>
+         <tr>
+            <td><span class="spacecraft">Pioneer 11</span></td>
+            <td>December 4, 1974</td>
+            <td>34,000 km</td>
+         </tr>
+         <tr>
+            <td><span class="spacecraft">Voyager 1</span></td>
+            <td>March 5, 1979</td>
+            <td>349,000 km</td>
+         </tr>
+         <tr>
+            <td><span class="spacecraft">Voyager 2</span></td>
+            <td>July 9, 1979</td>
+            <td>570,000 km</td>
+         </tr>
+         <tr>
+            <td rowspan="2"><span class="spacecraft">Ulysses</span></td>
+            <td>February 8, 1992[91]</td>
+            <td>408,894 km</td>
+         </tr>
+         <tr>
+            <td>February 4, 2004[91]</td>
+            <td>120,000,000 km</td>
+         </tr>
+         <tr>
+            <td><span class="spacecraft">Cassini</span></td>
+            <td>December 30, 2000</td>
+            <td>10,000,000 km</td>
+         </tr>
+      </tbody>
+   </table>
+   <script type="text/javascript">
+      /**
+      *    JQuery selector exercises
+      *
+      */
+
+      // ******************************************
+      // Exercise 1
+      //
+      // - Replace the null with a selector that
+      //   selects ALL TD elements.
+      // - Verify that all TD elements have borders
+      // ******************************************
+      $('td').css('border', '1px solid');
+
+
+      // ******************************************
+      // Exercise 2
+      //
+      // - Replace the null with a selector that
+      //   selects ALL TH elements.
+      // - Verify that all TH elements have borders
+      // ******************************************
+      $('th').css('border', '1px solid');
+
+
+      // ******************************************
+      // Exercise 3
+      //
+      // - Replace the null with a selector that
+      //   Selects the TABLE element
+      // - Verify that the table's borders collapse.
+      // ******************************************
+      $('table').css('border-collapse', 'collapse');
+
+
+      // ******************************************
+      // Exercise 4
+      //
+      // - Replace the null with a selector that
+      //   Selects the DIV with class 'abstract'
+      //   AND the table
+      // - Verify that the text font changes to arial
+      //   size 13 in both the table and the text.
+      // ******************************************
+      $('div.abstract, table').css('font', '13px arial, sans-serif');
+
+
+      // ******************************************
+      // Exercise 5
+      //
+      // - Replace the null with a selector that
+      //   selects the paragraph within the DIV
+      //   with ID title
+      // - Verify that the text font changes to arial
+      //   size 25 for the title.
+      // ******************************************
+      $('#title p').css('font', '25px arial, sans-serif');
+
+
+      // ******************************************
+      // Exercise 6
+      //
+      // - Replace the null with a selector that
+      //   selects the div with class 'abstract'
+      // - Verify that padding appears between
+      //   the text and the borders of the output.
+      // ******************************************
+      $('div.abstract').css('padding', '10px');
+
+
+      // ******************************************
+      // Exercise 7
+      //
+      // - Replace the null with a selector that
+      //   selects all paragraphs within the div 
+      //   with class 'abstract'
+      // - Verify that the paragraph's text color
+      //   changes to grey. The text 'Discussing
+      //   flyby missions since 1973:' stays
+      //   black
+      // ******************************************
+      $('div.abstract p').css('color', 'grey');
+
+
+      // ******************************************
+      // Exercise 8
+      //
+      // - Replace the null with a selector that
+      //   selects the TD element with rowspan
+      //   equal to two
+      // - Verify that the table cell containing
+      //   'ulysses' is colored green.
+      // ******************************************
+      $('td[rowspan=2]').css('background', 'lightgreen');
+
+
+      // ******************************************
+      // Exercise 9
+      //
+      // - Replace the null with a selector that
+      //   selects the third row in the table
+      //   excluding the header
+      // - Verify that the third row (containing
+      //   'Voyager 1' turns blue.
+      // ******************************************
+      $('tr:nth-child(4)').css('background', 'lightblue');
+
+
+      // ******************************************
+      // Exercise 10
+      //
+      // - Replace the null with a selector that
+      //   selects the td element containing the 
+      //   string 34,000
+      // - Verify that the cell containing 34,000
+      //   km turns orange.
+      // ******************************************
+      $('td:contains(34,000)').css('background', 'orange');
+
+
+      // ******************************************
+      // Exercise 11
+      //
+      // - Replace the null with a selector that
+      //   selects the element with class spacecraft
+      //   within the last row of the table.
+      // - Verify that the background of the text
+      //   'Cassini' is red and the text is white.
+      // ******************************************
+      var element = $('table tr:last-child');
+      element.find('.spacecraft')
+         .css('background', 'red')
+         .css('color', 'white');
+   </script>
+</body>
+
+</html>

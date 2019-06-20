@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/jquery.js"></script>
+    <meta name="description" content="JQuery Exercise 3: Events" />
+
+    <meta charset=utf-8 />
+    <title>JQuery Exercise 3: Events</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid;
+        }
+
+        body {
+            font: 12pt arial, sans-serif;
+            color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <pre>
+        /**
+        *    JQuery AJAX Exercise
+        *
+        */
+        
+        // ******************************************
+        // Exercise 1
+        //
+        // - Perform an ajax request using JQuery to
+        //   the url stored within the var 'url'.
+        // - The JSON response will contain a weather
+        //   forecast for Brussels. The path
+        //   'query.results.channel.item.forecast' 
+        //   in the result leads to an array of
+        //   forecasts.
+        // - In the success handler: for each forecast 
+        //   in the result, create a table row and add 
+        //   it to the table.
+        // ******************************************
+
+        // ******************************************
+        // Exercise 2
+        //
+        // - Add a 'fail' handler to the previous
+        //   ajax request
+        // - In the fail handler, add '<&zwj;h1>Fail<&zwj;/h1>'
+        //   to the HTML body.
+        // - Change something in the host of the URL
+        //   to verify that the change handler is
+        //   triggered.
+        // ******************************************
+    </pre>
+    <div id="results">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Low</th>
+                <th>High</th>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript">
+        /**
+        *    JQuery AJAX Exercise
+        *
+        */
+
+        // ******************************************
+        // Exercise 1
+        //
+        // - Perform an ajax request using JQuery to
+        //   the url stored within the var 'url'.
+        // - The JSON response will contain a weather
+        //   forecast for Brussels. The path
+        //   'query.results.channel.item.forecast' 
+        //   in the result leads to an array of
+        //   forecasts.
+        // - In the success handler: for each forecast 
+        //   in the result, create a table row and add 
+        //   it to the table.
+        // ******************************************
+        var url = 'https://samples.openweathermap.org/data/2.5/forecast?id=3337389&appid=d6580bb41f5aad2e865e9df6966c263e';
+
+
+        // ******************************************
+        // Exercise 2
+        //
+        // - Add a 'fail' handler to the previous
+        //   ajax request
+        // - In the fail handler, add '<h1>Fail</h1>'
+        //   to the HTML body.
+        // - Change something in the host of the URL
+        //   to verify that the change handler is
+        //   triggered.
+        // ******************************************
+        $.ajax(url)
+            .success(function (data) {
+                var forecasts = data.list;
+                for (var i = 0; i < forecasts.length; i++) {
+                    var fc = forecasts[i];
+                    $('table').append('<tr><td>' + new Date(fc.dt).toLocaleDateString() + '</td><td>' + fc.main.temp_min + '</td><td>' + fc.main.temp_max + '</td></tr>');
+                }
+            })
+            .fail(function () {
+                $('body').append('<h1>Fail</h1>');
+            });
+    </script>
+</body>
+
+</html>
